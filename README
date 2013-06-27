@@ -1,0 +1,57 @@
+
+this directory conatins MATLAB code that calculates the EOF of a
+multivariate time series, specifically, an EEG time series where the
+dimensions correspond to frequencies. Relative to the example scripts
+and data, we have frequencies ranging from 1 to 20 Hz with 0.5 Hz
+resolution; lenght of the time series does not matter.
+
+NOTE: this package relies on the MATLAB source "distinguishable colors."
+
+GENERAL INFORMATION:
+
+we have split this source into two categories:
+
+all_eofs: this directory contains source that estimates and plots all the
+eofs and their relative fractional variance for each eof.
+
+output:
+1. eof.X.jpg: the Xth EOF parameterized by time
+2. fv_fig.jpg: the fractional variance for each EOF parameterized by
+time 
+3. fv_log_fig.jpg: the log of the fractional variance of each EOF
+parameterized by time
+4. eof_seizure_whole.data: a data file containing the variable number
+where the first eof has its maximum per time
+
+first_eof_only: this directory contains source that estimates all eofs but
+only plots the first as well as the fractional variance.
+
+output:
+1. eof_whole_fig.jpg: a plot of the first eof and the fractional variance
+of the first eof in time.
+2. eof_only_whole_fig.jpg: a plot of the first eof in time
+3. eof_seizure_whole.data: a data file containing the variable number
+where the first eof has its maximum per time
+
+NOTE: both calculations have demo scripts, but currently all of the source
+requires parameters to be changed by the user if the data are not in the
+format given below and if the user wants a different eof
+resolution. note that the eof resolution must always all for the
+number of time points to be at least as large as the number of
+variables to avoid matrix rank problems.
+
+DATA FILE FORMAT:
+
+the data are represented as a matrix, are located in ./data and contained in
+a file titled "foo.data" as per the demo.
+
+the assumed time resolution is in minutes
+
+rows = time
+columns = variables
+
+
+
+
+
+
